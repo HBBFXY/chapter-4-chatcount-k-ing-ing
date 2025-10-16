@@ -13,3 +13,6 @@ def char_count(s):
     print(f'数字：{num}')
     print(f'空格：{space}')
     print(f'其他字符：{other}')
+
+# 示例调用
+# char_count('你好世界 123！')
