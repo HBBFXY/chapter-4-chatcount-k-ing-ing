@@ -9,9 +9,4 @@ def char_count(s):
             space += 1
         else:
             other += 1
-    # 一次性输出，严格无空行，无多余空格
-    print(f'英文字符：{eng}\n数字：{num}\n空格：{space}\n其他字符：{other}')
-
-if __name__ == "__main__":
-    s = input()
-    char_count(s)
+    return "英文字符：{0}\n数字：{1}\n空格：{2}\n其他字符：{3}".format(eng, num, space, other)
