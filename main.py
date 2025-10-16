@@ -1,7 +1,7 @@
 def char_count(s):
     eng, num, space, other = 0, 0, 0, 0
     for c in s:
-        if c.isalpha() and ord(c) < 128:  # 只统计英文字符
+        if c.isalpha() and ord(c) < 128:
             eng += 1
         elif c.isdigit():
             num += 1
@@ -9,7 +9,4 @@ def char_count(s):
             space += 1
         else:
             other += 1
-    print(f'英文字符：{eng}')
-    print(f'数字：{num}')
-    print(f'空格：{space}')
-    print(f'其他字符：{other}')
+    return f'英文字符：{eng}\n数字：{num}\n空格：{space}\n其他字符：{other}'
