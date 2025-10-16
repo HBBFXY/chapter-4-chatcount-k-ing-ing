@@ -1,7 +1,7 @@
 def char_count(s):
     eng = num = space = other = 0
     for c in s:
-        if c.isalpha() and c.isascii():  # 只统计英文字母
+        if c.isalpha() and c.isascii():
             eng += 1
         elif c.isdigit():
             num += 1
