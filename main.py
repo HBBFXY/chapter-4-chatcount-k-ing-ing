@@ -1,28 +1,24 @@
-# 初始化计数器
-letters = 0    # 英文字符
-digits = 0     # 数字
-spaces = 0     # 空格
-others = 0     # 其他字符
+letters = 0    # 英文字符（仅a-z,A-Z）
+digits = 0     # 数字（仅0-9）
+spaces = 0     # 半角空格（' '）
+others = 0     # 其他字符（特殊符号，不含中文）
 
-# 获取输入
 s = input()
 
-# 遍历每个字符
 for c in s:
-    # 英文字符判断（仅a-z,A-Z）
+    # 英文字符判断（严格匹配大小写字母）
     if 'a' <= c <= 'z' or 'A' <= c <= 'Z':
         letters += 1
     # 数字判断（仅0-9）
     elif '0' <= c <= '9':
         digits += 1
-    # 空格判断（仅单个空格）
+    # 空格判断（仅半角空格）
     elif c == ' ':
         spaces += 1
-    # 其他字符
-    else:
+    # 其他字符：仅特殊符号（排除中文）
+    elif not('\u4e00' <= c <= '\u9fff'):  # 中文范围：\u4e00-\u9fff，排除中文
         others += 1
 
-# 输出结果
 print(f"英文字符: {letters}")
 print(f"数字: {digits}")
 print(f"空格: {spaces}")
