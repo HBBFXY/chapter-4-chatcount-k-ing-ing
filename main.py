@@ -9,12 +9,16 @@ s = input()
 
 # 遍历每个字符
 for c in s:
-    if c.isalpha() and c.encode().isalpha():  # 确保是纯英文字母（排除中文等其他语言字母）
+    # 英文字符判断（仅a-z,A-Z）
+    if 'a' <= c <= 'z' or 'A' <= c <= 'Z':
         letters += 1
-    elif c.isdigit():
+    # 数字判断（仅0-9）
+    elif '0' <= c <= '9':
         digits += 1
-    elif c == ' ':  # 仅统计半角空格
+    # 空格判断（仅单个空格）
+    elif c == ' ':
         spaces += 1
+    # 其他字符
     else:
         others += 1
 
