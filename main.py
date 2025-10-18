@@ -1,25 +1,25 @@
-# 初始化各类字符计数器
-英文字符数 = 0
-数字数 = 0
-空格数 = 0
-其他字符数 = 0
+# 初始化计数器
+letters = 0    # 英文字符
+digits = 0     # 数字
+spaces = 0     # 空格
+others = 0     # 其他字符
 
-# 获取用户输入的一行字符
-输入字符 = input()
+# 获取输入
+s = input()
 
-# 遍历每个字符进行分类统计
-for 字符 in 输入字符:
-    if 字符.isalpha():
-        英文字符数 += 1
-    elif 字符.isdigit():
-        数字数 += 1
-    elif 字符 == ' ':  # 仅统计空格（不包含制表符等其他空白字符）
-        空格数 += 1
+# 遍历每个字符
+for c in s:
+    if c.isalpha() and c.encode().isalpha():  # 确保是纯英文字母（排除中文等其他语言字母）
+        letters += 1
+    elif c.isdigit():
+        digits += 1
+    elif c == ' ':  # 仅统计半角空格
+        spaces += 1
     else:
-        其他字符数 += 1
+        others += 1
 
-# 严格按照指定格式输出结果
-print(f"英文字符: {英文字符数}")
-print(f"数字: {数字数}")
-print(f"空格: {空格数}")
-print(f"其他字符: {其他字符数}")
+# 输出结果
+print(f"英文字符: {letters}")
+print(f"数字: {digits}")
+print(f"空格: {spaces}")
+print(f"其他字符: {others}")
